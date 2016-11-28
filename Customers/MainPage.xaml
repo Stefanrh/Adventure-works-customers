@@ -8,7 +8,7 @@
     mc:Ignorable="d">
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-        <Grid Margin="10,20,10,20">
+        <Grid x:Name="customersTabularView" Margin="10,20,10,20" Visibility="Visible">
             <Grid.RowDefinitions>
                 <RowDefinition Height="2*"/>
                 <RowDefinition Height="*"/>
@@ -56,6 +56,43 @@
                 <TextBox x:Name="phone" HorizontalAlignment="Left" TextWrapping="Wrap" Text="" VerticalAlignment="Center" Width="200" FontSize="20" Grid.ColumnSpan="3" Grid.Column="3" Grid.Row="5"/>
             </Grid>
         </Grid>
-
+        <Grid x:Name="customersColumnarView" Margin="10,20,10,20" Visibility="Collapsed">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="10*"/>
+            </Grid.RowDefinitions>
+            <TextBlock x:Name="textBlock" HorizontalAlignment="Center" TextWrapping="Wrap" Text="Customers" VerticalAlignment="Center" Grid.Row="0" FontSize="30"/>
+            <Grid Grid.Row="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <TextBlock Grid.Row="0" Grid.Column="0" HorizontalAlignment="Center" TextWrapping="Wrap" Text="ID" VerticalAlignment="Center" FontSize="20"/>
+                <TextBlock Grid.Row="1" Grid.Column="0" HorizontalAlignment="Center" TextWrapping="Wrap" Text="Title" VerticalAlignment="Center" FontSize="20"/>
+                <TextBlock Grid.Row="2" Grid.Column="0" HorizontalAlignment="Center" TextWrapping="Wrap" Text="First Name" VerticalAlignment="Center" FontSize="20"/>
+                <TextBlock Grid.Row="3" Grid.Column="0" HorizontalAlignment="Center" TextWrapping="Wrap" Text="Last Name" VerticalAlignment="Center" FontSize="20"/>
+                <TextBox x:Name="cId" HorizontalAlignment="Stretch" TextWrapping="Wrap" Text="" VerticalAlignment="Center" IsReadOnly="True" FontSize="20" Grid.Column="1" Grid.Row="0"/>
+                <TextBox x:Name="cFirstName" HorizontalAlignment="Stretch" TextWrapping="Wrap" Text="" VerticalAlignment="Center" FontSize="20" Grid.Column="1" Grid.Row="2"/>
+                <TextBox x:Name="cLastName" HorizontalAlignment="Stretch" TextWrapping="Wrap" Text="" VerticalAlignment="Center" FontSize="20" Grid.Column="1" Grid.Row="3"/>
+                <ComboBox x:Name="cTitle" HorizontalAlignment="Stretch" VerticalAlignment="Center" FontSize="20" Grid.Column="1" Grid.Row="1">
+                    <ComboBoxItem Content="Mr"/>
+                    <ComboBoxItem Content="Mrs"/>
+                    <ComboBoxItem Content="Ms"/>
+                    <ComboBoxItem Content="Miss"/>
+                </ComboBox>
+                <TextBlock HorizontalAlignment="Center" TextWrapping="Wrap" Text="Email" VerticalAlignment="Center" FontSize="20" Grid.Column="0" Grid.Row="4"/>
+                <TextBox x:Name="cEmail" HorizontalAlignment="Stretch" TextWrapping="Wrap" Text="" VerticalAlignment="Center" FontSize="20" Grid.Column="1" Grid.Row="4"/>
+                <TextBlock HorizontalAlignment="Center" TextWrapping="Wrap" Text="Phone" VerticalAlignment="Center" FontSize="20" Grid.Column="0" Grid.Row="5"/>
+                <TextBox x:Name="cPhone" HorizontalAlignment="Stretch" TextWrapping="Wrap" Text="" VerticalAlignment="Center" FontSize="20" Grid.Column="1" Grid.Row="5"/>
+            </Grid>
+        </Grid>
     </Grid>
 </Page>
